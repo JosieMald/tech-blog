@@ -2,15 +2,15 @@ const sequelize = require('../config/connection');
 const { User } = require('../models');
 const userData = [
     {
-        userName: "Sal",
+        user_name: "Sal",
         password: "password12345"
       },
       {
-        userName: "Lernantino",
+        user_name: "Lernantino",
         password: "password12345"
       },
       {
-        userName: "Amiko",
+        user_name: "Amiko",
         password: "password12345"
       }
 ]
