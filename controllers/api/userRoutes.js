@@ -7,8 +7,8 @@ router.post('/', async (req, res) => {
     const userData = await User.create(req.body);
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      req.session.userId = userData.id;
+      req.session.loggedIn = true;
 
       res.status(200).json(userData);
     });
@@ -32,6 +32,7 @@ console.log(userData);
 
     const validPassword = await userData.checkPassword(req.body.password);
 console.log(req.body.password);
+// why isn't this working correctly? Unless it doesn't work properly with seeded data.
     if (validPassword) {
       res
         .status(400)
@@ -53,7 +54,7 @@ console.log(req.body.password);
 
 // User logsout
 router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });
