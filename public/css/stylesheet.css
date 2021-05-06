@@ -1,0 +1,65 @@
+body {
+    background-color: #EBF5EE;
+}
+
+a {
+    color: #283044;
+    text-decoration: none;
+    background-color: transparent;
+    padding-left: 15px;
+    font-weight: 500;
+    font-family: 'Catamaran', sans-serif;
+}
+
+h1 {
+  font-family: "Bree Serif", serif;
+  color: #283044;
+}
+
+.posts {
+    background-color: #EBF5EE;
+}
+.container {
+    width: 600px;
+}
+
+.jumbotron {
+  height: auto;
+  padding: 5px 0 !important;
+  background-color: #78A1BB;
+  margin: auto;
+}
+
+.display-4 {
+    padding: 5px;
+}
+
+.login-out {
+    padding-right: 15px;
+    background-color: #78A1BB;
+    padding-top: 5px;
+}
+
+.links {
+    padding-bottom: 5px;
+}
+
+.img-container {
+    position: relative;
+  text-align: center;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #78A1BB;
+    font-size: 45px;
+}
+
+.title {
+    padding: 5px;
+}
+
+
