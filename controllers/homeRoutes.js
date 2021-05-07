@@ -19,8 +19,18 @@ router.get('/signup', (req,res) => {
     res.render('signup')
 });
 
+router.get("/dashboard", (req, res) => {
+    try {
+      res.render("dashboard", {
+        loggedIn: req.session.loggedIn,
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
 router.get('/dashboard', withAuth, async (req, res) => {
-    console.log(userId)
+    console.log(req.session.id)
     try {
       // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.id, {
@@ -38,6 +48,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
         loggedIn: true
       });
     } catch (err) {
+        console.log(err)
       res.status(500).json(err);
     }
   });

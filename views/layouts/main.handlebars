@@ -18,32 +18,32 @@
 </head>
 
 <body>
+  <div class="flex-column justify-space-around">
+  <header class="display-flex justify-space-between align-center p-2"></header>
   <nav>
-    <div class="jumbotron jumbotron-fluid text-center">
-      <div class="text-right align-top login-out">
+      {{!-- <div class="container"> --}}
+        <div class="links">
+          <a class="ml-4" href="/">Home</a>
+          <a href="/dashboard">Dashboard</a>
         {{#if loggedIn}}
         <a id="logout" href="/logout">Logout</a>
         {{else}}
         <a href="/login">Login</a>
         {{/if}}
-      </div>
-      <div class="container">
-        <h1 class="display-4">Enlighten Me</h1>
-        <div class="links">
-          <a href="/">Home</a>
-          <a href="/user">My Activities</a>
+        <h1 class="ml-5">Tech Blog</h1>
         </div>
-      </div>
+      {{!-- </div> --}}
     </div>
   </nav>
+  </header>
   <main>
     <div class="posts">
       {{{body}}}
     </div>
   </main>
+  </div>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
-
 </html>
