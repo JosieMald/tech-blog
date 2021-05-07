@@ -19,8 +19,17 @@ h1 {
 .posts {
     background-color: #EBF5EE;
 }
+
+.card {
+border-radius: 0%;
+}
+
 .container {
-    width: 600px;
+    width: 90%;
+}
+
+.create-new-post {
+background-color: brown;
 }
 
 .jumbotron {

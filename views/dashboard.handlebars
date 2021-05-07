@@ -1,5 +1,35 @@
-<div class="text-center">
-  <p>
-    <button class="btn btn-primary">Create New Post!</button>
-  </p>
+<div class="card post-form container">
+  <div class="card-body">
+    <form class="new-post-form">
+      <h5>Create New Post</h5>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="title" class="form-control title" id="postTitle">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Content</label>
+        <textarea class="form-control" id="postText" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary postBtn">Create</button>
+    </form>
+  </div>
 </div>
+
+{{#each serializedData as |data|}}
+<div class="card text-center mt-3 mb-3 container">
+  <div class="card-body">
+    <h5 class="card-title">{{data.title}}</h5>
+    <p class="card-text">{{data.body}}</p>
+  </div>
+  <div class="card-footer text-muted">
+    -{{data.user.username}}, {{dateFormat data.date_created}}
+
+  </div>
+</div>
+{{/each}}
+
+<div class="text-center">
+  <button class="btn btn-primary mt-2">Create New Post!</button>
+</div>
+
+<script src="/js/dashboard.js"></script>

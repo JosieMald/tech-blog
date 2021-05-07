@@ -36,7 +36,6 @@ console.log(userData);
     const validPassword = await userData.checkPassword(req.body.password);
 console.log(req.body.password);
 
-// why isn't this working correctly? Unless it doesn't work properly with seeded data.
     if (!validPassword) {
       res
         .status(400)
