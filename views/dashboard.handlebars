@@ -15,14 +15,14 @@
   </div>
 </div>
 
-{{#each serializedData as |data|}}
+{{#each posts as |data|}}
 <div class="card text-center mt-3 mb-3 container">
   <div class="card-body">
     <h5 class="card-title">{{data.title}}</h5>
     <p class="card-text">{{data.body}}</p>
   </div>
   <div class="card-footer text-muted">
-    -{{data.user.username}}, {{dateFormat data.date_created}}
+    -{{data.user.user_name}}, {{dateFormat data.createdAt}}
 
   </div>
 </div>

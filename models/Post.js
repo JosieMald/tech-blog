@@ -12,6 +12,14 @@ Post.init(
     body: {
       type: DataTypes.STRING,
     },
+    // userId: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: "user",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,

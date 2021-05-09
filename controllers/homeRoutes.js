@@ -19,32 +19,36 @@ router.get('/signup', (req,res) => {
     res.render('signup')
 });
 
-router.get("/dashboard", (req, res) => {
-    try {
-      res.render("dashboard", {
-        loggedIn: req.session.loggedIn,
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+// router.get("/dashboard", (req, res) => {
+//     try {
+//       res.render("dashboard", {
+//         loggedIn: req.session.loggedIn,
+//       });
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
 router.get('/dashboard', withAuth, async (req, res) => {
     console.log(req.session.id)
     try {
+        const postData = await Post.findAll()
+
       // Find the logged in user based on the session ID
-      const userData = await User.findByPk(req.session.id, {
-        attributes: { exclude: ['password'] },
-        include: [{ 
-            model: User,
-            attributes: id,
-         }],
-      });
+    //   const userData = await User.findByPk(req.session.id, {
+    //     attributes: { exclude: ['password'] },
+    //     include: [{ 
+    //         model: User,
+    //         attributes: id,
+    //      }],
+    //   });
   
-      const user = userData.get({ plain: true });
-  
+    //   const user = userData.get({ plain: true });
+  const posts = postData.map(data => {
+      return data.get({ plain: true });
+  })
       res.render('dashboard', {
-        ...user,
+        posts,
         loggedIn: true
       });
     } catch (err) {
