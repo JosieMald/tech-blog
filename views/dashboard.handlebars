@@ -18,12 +18,13 @@
 {{#each posts as |data|}}
 <div class="card text-center mt-3 mb-3 container">
   <div class="card-body">
-    <h5 class="card-title">{{data.title}}</h5>
+    <div class="container d-flex justify-content-between">
+      <h5 class="card-title">{{data.title}}</h5>
+      <div class="text-muted">
+        Posted by {{data.user_id}} on {{dateFormat data.createdAt}}
+      </div>
+    </div>
     <p class="card-text">{{data.body}}</p>
-  </div>
-  <div class="card-footer text-muted">
-    {{data.user_id}}, {{dateFormat data.createdAt}}
-
   </div>
 </div>
 {{/each}}
