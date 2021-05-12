@@ -1,4 +1,4 @@
-<div class="card post-form container">
+<div class="card post-form container hide">
   <div class="card-body">
     <form class="new-post-form">
       <h5>Create New Post</h5>
@@ -10,7 +10,7 @@
         <label for="exampleFormControlTextarea1">Content</label>
         <textarea class="form-control" id="postText" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary postBtn">Create</button>
+      <button type="submit" class="btn btn-primary postBtn create">Create</button>
     </form>
   </div>
 </div>
@@ -30,7 +30,9 @@
 {{/each}}
 
 <div class="text-center">
-  <button class="btn btn-primary mt-2">Create New Post!</button>
+  <button class="btn btn-primary mt-2 create-new-post">Create New Post!</button>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="/js/dashboard.js"></script>
+<script src="/js/index.js"></script>

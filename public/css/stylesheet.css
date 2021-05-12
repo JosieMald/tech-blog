@@ -28,10 +28,6 @@ border-radius: 0%;
     width: 90%;
 }
 
-.create-new-post {
-background-color: brown;
-}
-
 .jumbotron {
   height: auto;
   padding: 5px 0 !important;
@@ -71,4 +67,7 @@ background-color: brown;
     padding: 5px;
 }
 
+.hide {
+    display: none;
+}
 
